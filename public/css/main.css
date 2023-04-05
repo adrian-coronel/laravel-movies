@@ -1,0 +1,11 @@
+/*
+  Para usar tailwindcss ejecutamos comandos:
+  npm install tailwindcss
+  npx tailwindcss init
+*/
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
