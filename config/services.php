@@ -24,6 +24,11 @@ return [
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
+    
+    # Agregamos los servicios para usar el token para la conexión con tmdb
+    'tmbd' => [
+        'token' => env('TMDB_TOKEN'),
+    ],
 
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
