@@ -2,4 +2,4 @@ Al usar el comando "*php artisan make:component MovieCard*" se nos crea una nuev
 
 namespace App\View\Components;
 
-Esto nos facilita ya que se puede usar un controlador especifico de un componente
+Esto nos facilita ya que se puede usar un controlador especifico de un componente.

@@ -8,12 +8,18 @@ use Illuminate\View\Component;
 
 class MovieCard extends Component
 {
+
+    public $movie;
+    public $genres;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($movie, $genres)
     {
-        //
+        # Una vez recibido el valor mediante :movie='$movie' :genres='$genres'
+        # ya se puede usar en la mista movie-card
+        $this->movie = $movie;
+        $this->genres = $genres;
     }
 
     /**
