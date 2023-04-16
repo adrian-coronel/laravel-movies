@@ -12,9 +12,7 @@
       <span>{{ date('M d, Y',strtotime($movie['release_date'])) }}</span>
     </div>
     <div class="text-gray-400">
-      @foreach ($movie['genre_ids'] as $genre)
-          {{$genres->get($genre)}}@if (!$loop->last), @endif<!--Si no estamos en la ultima iteración-->
-      @endforeach
+      @foreach ($movie['genre_ids'] as $genre){{$genres->get($genre)}}@if(!$loop->last),@endif @endforeach
     </div>
   </div>
 </div>
