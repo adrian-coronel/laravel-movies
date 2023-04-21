@@ -8,6 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Movie App</title>
 
+  <!-- CSS OF LIVEWARE -->
+  @livewireStyles
 </head>
 <body class="font-sans bg-gray-900  text-white">
   
@@ -30,13 +32,10 @@
         </li>
       </ul>
       <div class="flex flex-col md:flex-row items-center">
-        <div class="relative mt-3 md:mt-0">
-          <input type="text" class="bg-gray-800 rounded-full w-64 pl-8 px-4 py-1 focus:outline-none focus:shadow-outline" placeholder="Search">
-          <div class="absolute top-0">
-            {{-- #icon-search --}}
-            <svg class="fill-current w-4 text-gray-500 mt-2 ml-2"></svg>
-          </div>
-        </div>
+
+        {{-- componente con livewire --}}
+        <livewire:search-dropdown/>
+        
         <div class="md:ml-4 mt-3 md:mt-0">
           <a href="#">
             {{-- avatar --}}
@@ -46,8 +45,11 @@
       </div>
     </div>  
   </nav>
+  
 
   @yield('content')
 
+  <!-- JS OF LIVEWARE -->
+  @livewireScripts
 </body>
 </html>
