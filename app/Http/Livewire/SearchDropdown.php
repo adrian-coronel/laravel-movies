@@ -16,6 +16,7 @@ class SearchDropdown extends Component
     {
         $searchResults = [];
 
+        # minimo 2 letras para obtener un resultado 
         if (strlen($this->search) >= 2) {      
             $searchResults = Http::withToken(config('services.tmbd.token'))
             ->get('https://api.themoviedb.org/3/search/movie?query='. $this->search)
