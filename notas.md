@@ -11,3 +11,5 @@ Esto nos facilita ya que se puede usar un controlador especifico de un component
 Con Laravel Livewire, puedes crear componentes de interfaz de usuario de manera sencilla y rápida, utilizando PHP y HTML sin tener que preocuparte por manipular el DOM directamente o escribir código JavaScript complejo. 2*Livewire maneja automáticamente la interacción con el servidor a través de una conexión HTTP de forma transparente al usuario.*"
 
 # Creación de un "*componente liveware*": php artisan mike:livewire <name>
+
+# COMO AGREGAR EL SPINNER: https://github.com/aniftyco/tailwindcss-spinner

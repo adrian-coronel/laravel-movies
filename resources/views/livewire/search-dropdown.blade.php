@@ -5,6 +5,10 @@
     {{-- #icon-search --}}
     <svg class="fill-current w-4 text-gray-500 mt-2 ml-2"></svg>
   </div>
+
+  {{-- SPINNER | wire:loading => Muestra u ocultar elementos mientras se está realizando una acción con Livewire. --}}
+  <div wire:loading class="spinner top-0 right-0 mr-4 mt-4"></div>
+
   @if (strlen($search) >= 2)      
     <div class="absolute bg-gray-800 rounded w-64 mt-4 text-sm">
       @if ($searchResults->count() > 0)        
