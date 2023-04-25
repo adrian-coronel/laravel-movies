@@ -1,4 +1,6 @@
-<div class="relative mt-3 md:mt-0">
+{{-- x-data: define una parte de HTML como un componente Alpine y proporciona 
+  los datos reactivos para que ese componente haga referencia.--}}
+<div class="relative mt-3 md:mt-0" x-data="{isOpen: true}" @click.away="isOpen = false" @click="isOpen = true">{{-- @click.away=> Detectar clic fuera del elemento que tiene asociado el evento "@click"--}}
   {{-- wire:model permite enlazar(reflejar) un input o select a una propiedad publica del componente --}}
   <input wire:model="search" type="text" class="bg-gray-800 rounded-full w-64 pl-8 px-4 py-1 focus:outline-none focus:shadow-outline" placeholder="Search">
   <div class="absolute top-0">
@@ -10,7 +12,13 @@
   <div wire:loading class="spinner top-0 right-0 mr-4 mt-4"></div>
 
   @if (strlen($search) >= 2)      
-    <div class="absolute bg-gray-800 rounded w-64 mt-4 text-sm">
+    <div 
+      class="absolute bg-gray-800 rounded w-64 mt-4 text-sm" 
+      {{-- x-show: Proporciona una forma expresiva de mostrar y ocultar elementos DOM. --}}
+      x-show="isOpen"
+      @keydown.escape.window="isOpen = false"
+
+    >
       @if ($searchResults->count() > 0)        
         <ul>
           @foreach ($searchResults as $result)

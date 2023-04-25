@@ -8,6 +8,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Movie App</title>
 
+  {{-- CDN ALPINE JS --}}
+  {{-- <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@3.10.3/dist/alpine.min.js"></script> --}}
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+
   <!-- CSS OF LIVEWARE -->
   @livewireStyles
   <style>
