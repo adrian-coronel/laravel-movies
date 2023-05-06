@@ -34,6 +34,9 @@
                   <div>{{ $crew['name'] }}</div>
                   <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
                 </div>
+              @else
+              {{-- Agregamos el break para que no se siga ejecutando el bucle --}}
+                @break
               @endif
             @endforeach
           </div>
@@ -62,16 +65,18 @@
           {{-- Que muestre solo 5 actores --}}
           @if ($loop->index < 5) 
             <div class="mt-8">
-            <a href="#">
-                <img src="{{'https://image.tmdb.org/t/p/w500/'. $cast['profile_path']}}" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-150">
-            </a>
-            <div class="mt-2">
-                <a href="#" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
-                <div class="flex items-center text-gray-400 text-sm mt-1">
-                    <span class="">{{$cast['character']}}</span>
-                </div>
+              <a href="#">
+                  <img src="{{'https://image.tmdb.org/t/p/w500/'. $cast['profile_path']}}" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-150">
+              </a>
+              <div class="mt-2">
+                  <a href="#" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
+                  <div class="flex items-center text-gray-400 text-sm mt-1">
+                      <span class="">{{$cast['character']}}</span>
+                  </div>
+              </div>
             </div>
-        </div>
+          @else
+            @break
           @endif
         @endforeach
       </div>
@@ -89,6 +94,8 @@
                 <img src="{{ 'https://image.tmdb.org/t/p/w500/'. $image['file_path'] }}" alt="image1" class="hover:opacity-75 transition ease-in-out duration 150">
               </a>
             </div>
+          @else
+            @break
           @endif
         @endforeach
       </div>
