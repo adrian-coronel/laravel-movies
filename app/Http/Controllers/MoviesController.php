@@ -24,11 +24,6 @@ class MoviesController extends Controller
         $genreArray = Http::withToken(config('services.tmbd.token'))
         ->get('https://api.themoviedb.org/3/genre/movie/list')
         ->json()['genres'];
-
-        $genres = collect($genreArray)->mapWithKeys(function($genre){
-            return [$genre['id']=>$genre['name']];
-        });
-
     
         // return view('index',[
         //     #Estas 3 cosas que necesitamos la pasaremos a MoviesViewModel
@@ -37,7 +32,7 @@ class MoviesController extends Controller
         //     'genres' => $genres,
         // ]);
 
-        $viewModel = new MoviesViewModel($popularMovies,$nowPlayingMovies,$genres);
+        $viewModel = new MoviesViewModel($popularMovies,$nowPlayingMovies,$genreArray);
         return view('index',$viewModel);
     }
 

@@ -31,21 +31,30 @@ class MoviesViewModel extends ViewModel
         return $this->formatMovies($this->nowPlayingMovies);
     }
     public function genres(){
-        return $this->genres;
+        return collect($this->genres)->mapWithKeys(function($genre){
+            return [$genre['id']=>$genre['name']];
+        });
     }
 
     /**
      * Este metódo es para que no se repita el mismo código en las otras funciones
      */
-    public function formatMovies($movies){
+    private function formatMovies($movies){
+
         return collect($movies)->map(function($movie){
             # merge() Devuelve una nueva colecion que contiene todos los elementos originales y los elementos proporcionados como argumento
+
+            $genresFormatted = collect($movie['genre_ids'])->mapWithKeys(function($value){
+                # retorna el valor reasignado y que coincida entre "genre_ids" y el array "genre"
+                return [$value => $this->genres()->get($value)];
+            });
+
             return collect($movie)->merge([
                 # Ahora los valores ya se pasarán modificados sin necidad de hacerlo en la vista
                 'poster_path' => 'https://image.tmdb.org/t/p/w500/' . $movie['poster_path'],
                 'vote_average' => $movie['vote_average'] * 10 .'%',
                 'release_date' => date('M d, Y',strtotime($movie['release_date'])),
-
+                'genres' => $genresFormatted
             ]);
         })->dump();
     }
