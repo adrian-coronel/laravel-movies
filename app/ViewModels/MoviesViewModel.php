@@ -47,7 +47,8 @@ class MoviesViewModel extends ViewModel
             $genresFormatted = collect($movie['genre_ids'])->mapWithKeys(function($value){
                 # retorna el valor reasignado y que coincida entre "genre_ids" y el array "genre"
                 return [$value => $this->genres()->get($value)];
-            });
+            })->implode(', ');
+            # IMPLODE se utiliza para unir elementos de un array en una sola cadena separada por un delimitador especificado.
 
             return collect($movie)->merge([
                 # Ahora los valores ya se pasarán modificados sin necidad de hacerlo en la vista
