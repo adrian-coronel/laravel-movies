@@ -23,3 +23,12 @@ Con Laravel Livewire, puedes crear componentes de interfaz de usuario de manera 
  # DOCS: https://alpinejs.dev/start-here
  *¿Como lo usaremos?*
  En nuestro caso lo que haremos es que al momento en que demos click fuera del componente "search-dropdown" este se oculte
+
+
+ # ------------ Spatie/ Larvel View Models ------------#
+ INSTALL LINK: https://github.com/spatie/laravel-view-models
+ INSTALL COMPOSER: composer require spatie/laravel-view-models
+
+ Es una *biblioteca* útil ara Laravel que *mejora la organización y claridad del codigo al encasular la lógica de la vista en modelos dedicados y reutilizables*, lo que facilita la realización de pruebas unitarias de la lógica de la vista.
+
+ Crear un view-model: php artisan make:view-model HomepageViewModel
