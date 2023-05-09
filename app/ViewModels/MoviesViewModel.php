@@ -25,7 +25,20 @@ class MoviesViewModel extends ViewModel
     }
 
     public function popularMovies(){
-        return collect($this->popularMovies)->map(function($movie){
+        return $this->formatMovies($this->popularMovies);
+    }
+    public function nowPlayingMovies(){
+        return $this->formatMovies($this->nowPlayingMovies);
+    }
+    public function genres(){
+        return $this->genres;
+    }
+
+    /**
+     * Este metódo es para que no se repita el mismo código en las otras funciones
+     */
+    public function formatMovies($movies){
+        return collect($movies)->map(function($movie){
             # merge() Devuelve una nueva colecion que contiene todos los elementos originales y los elementos proporcionados como argumento
             return collect($movie)->merge([
                 # Ahora los valores ya se pasarán modificados sin necidad de hacerlo en la vista
@@ -35,12 +48,6 @@ class MoviesViewModel extends ViewModel
 
             ]);
         })->dump();
-    }
-    public function nowPlayingMovies(){
-        return $this->nowPlayingMovies;
-    }
-    public function genres(){
-        return $this->genres;
     }
 
 }
