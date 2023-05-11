@@ -56,8 +56,11 @@ class MoviesViewModel extends ViewModel
                 'vote_average' => $movie['vote_average'] * 10 .'%',
                 'release_date' => date('M d, Y',strtotime($movie['release_date'])),
                 'genres' => $genresFormatted
+            ])->only([
+                # pasamos los datos que solo vamos a usar
+                'poster_path','id','genre_ids','title','vote_average','overview','release_date','genres',
             ]);
-        })->dump();
+        });
     }
-
+//  MINUTO 19:30
 }
