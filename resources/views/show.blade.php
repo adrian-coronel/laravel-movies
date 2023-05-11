@@ -15,9 +15,8 @@
           <span>{{ $movie['release_date'] }}</span>
           <span class="mx-2">|</span>
           <span>
-            {{-- @foreach ($movie['genres'] as $genre)
-            {{$genre['name']}}@if (!$loop->last), @endif<!--Si no estamos en la ultima iteración-->
-            @endforeach --}}
+            {{-- Eliminamos el bucle para genres gracias Modelo de vista(MovieModelView) --}}
+            {{$movie['genres']}}
           </span>
         </div>
 
@@ -28,16 +27,11 @@
         <div class="mt-12">
           <h4 class="text-white font-semibold">Featured Cast</h4>
           <div class="flex mt-4">
-            @foreach ($movie['credits']['crew'] as $crew)
-              @if ($loop->index < 2) {{-- Si son menos de 2 que los ponga --}}
+            @foreach ($movie['crew'] as $crew)
                 <div class="mr-8">
                   <div>{{ $crew['name'] }}</div>
                   <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
                 </div>
-              @else
-              {{-- Agregamos el break para que no se siga ejecutando el bucle --}}
-                @break
-              @endif
             @endforeach
           </div>
         </div>

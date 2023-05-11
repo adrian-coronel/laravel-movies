@@ -30,8 +30,10 @@ class MovieViewModel extends ViewModel
             'vote_average' => $this->movie['vote_average'] * 10 .'%',
             'release_date' => date('M d, Y',strtotime($this->movie['release_date'])),
             #eliminamos el campo "id" de gnre y nos quedamos con el campo "name"
-            'genres' => collect($this->movie['genres'])->pluck('name')->flatten()->implode(', '),
-            # IMPLODE se utiliza para unir elementos de un array en una sola cadena separada por un delimitador especificado.
+            'genres' => collect($this->movie['genres'])->pluck('name')->flatten()->implode(', '), # IMPLODE une elementos de un array en una sola cadena separada por un delimitador.
+
+            # Aqui tomamos 2 elementos de crew y los mostramos como un campo aparte
+            'crew' => collect($this->movie['credits']['crew'])->take(2),
         ])->dump();
     }
 }
