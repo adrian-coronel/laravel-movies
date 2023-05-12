@@ -26,7 +26,7 @@ class MoviesController extends Controller
         ->get('https://api.themoviedb.org/3/genre/movie/list')
         ->json()['genres'];
 
-        # Procesa los datos
+        # La responsabilidad de MoviesViewModel es formatear los datos y prepararlos para la vista
         $viewModel = new MoviesViewModel($popularMovies,$nowPlayingMovies,$genreArray);
         return view('index',$viewModel);
     }

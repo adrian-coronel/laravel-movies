@@ -32,3 +32,4 @@ Con Laravel Livewire, puedes crear componentes de interfaz de usuario de manera 
  Es una *biblioteca* útil ara Laravel que *mejora la organización y claridad del codigo al encasular la lógica de la vista en modelos dedicados y reutilizables*, lo que facilita la realización de pruebas unitarias de la lógica de la vista.
 
  Crear un view-model: php artisan make:view-model HomepageViewModel
+ *INTERESANTE, ME HIZO REDUCIR MUCHO CODIGO EN LA VISTA, YA QUE TRAZLADE LA LOGICA DE LA VISTA A UN MODELO CENTRALIZADO*

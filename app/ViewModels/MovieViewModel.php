@@ -34,6 +34,12 @@ class MovieViewModel extends ViewModel
 
             # Aqui tomamos 2 elementos de crew y los mostramos como un campo aparte
             'crew' => collect($this->movie['credits']['crew'])->take(2),
-        ])->dump();
+
+            'cast' => collect($this->movie['credits']['cast'])->take(5),
+            'images' => collect($this->movie['images']['backdrops'])->take(8),
+        ])->only([
+            # pasamos los datos que solo vamos a usar
+            'poster_path','id','genre_ids','title','vote_average','overview','release_date','genres','crew','credits','videos','images','cew','cast','images'
+        ]);
     }
 }
