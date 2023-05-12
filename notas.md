@@ -25,10 +25,11 @@ Con Laravel Livewire, puedes crear componentes de interfaz de usuario de manera 
  En nuestro caso lo que haremos es que al momento en que demos click fuera del componente "search-dropdown" este se oculte
 
 
- # ----------------- USO DE SPATIE ------------- #
- # comand: composer require spatie/laravel
- > ¿Alguna vez ha creado un controlador en el que tuvo que trabajar mucho para preparar las variables que se pasarían a una vista?    Puede mover ese tipo de trabajo a un llamado modelo de vista. En esencia, los modelos de vista son clases simples que toman algunos datos y los transforman en algo útil para la vista.
+ # ------------ Spatie/ Larvel View Models ------------#
+ INSTALL LINK: https://github.com/spatie/laravel-view-models
+ INSTALL COMPOSER: composer require spatie/laravel-view-models
 
- Los *view models* pueden ser muy útiles en situaciones en las que necesitamos *presentar datos de una manera que sea diferente de cómo se almacenan en la base de datos*, por ejemplo, presentar una fecha en un formato diferente o calcular un campo derivado.
+ Es una *biblioteca* útil ara Laravel que *mejora la organización y claridad del codigo al encasular la lógica de la vista en modelos dedicados y reutilizables*, lo que facilita la realización de pruebas unitarias de la lógica de la vista.
 
- *Spatie ViewModel* es una *biblioteca de Laravel* que ayuda a construir view models. Proporciona una manera fácil de crear clases de modelo de vista, incluyendo métodos para acceder a los datos del modelo de una manera optimizada y personalizada para la vista.
+ Crear un view-model: php artisan make:view-model HomepageViewModel
+ *INTERESANTE, ME HIZO REDUCIR MUCHO CODIGO EN LA VISTA, YA QUE TRAZLADE LA LOGICA DE LA VISTA A UN MODELO CENTRALIZADO*
