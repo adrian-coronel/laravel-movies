@@ -28,10 +28,10 @@
           <h4 class="text-white font-semibold">Featured Cast</h4>
           <div class="flex mt-4">
             @foreach ($movie['crew'] as $crew)
-                <div class="mr-8">
-                  <div>{{ $crew['name'] }}</div>
-                  <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
-                </div>
+              <div class="mr-8">
+                <div>{{ $crew['name'] }}</div>
+                <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
+              </div>
             @endforeach
           </div>
         </div>
@@ -57,17 +57,17 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         @foreach ($movie['cast'] as $cast)
           {{-- Que muestre solo 5 actores --}}
-            <div class="mt-8">
-              <a href="#">
-                  <img src="{{'https://image.tmdb.org/t/p/w500/'. $cast['profile_path']}}" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-150">
-              </a>
-              <div class="mt-2">
-                  <a href="#" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
-                  <div class="flex items-center text-gray-400 text-sm mt-1">
-                      <span class="">{{$cast['character']}}</span>
-                  </div>
-              </div>
+          <div class="mt-8">
+            <a href="#">
+                <img src="{{'https://image.tmdb.org/t/p/w500/'. $cast['profile_path']}}" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-150">
+            </a>
+            <div class="mt-2">
+                <a href="#" class="text-lg mt-2 hover:text-gray:300">{{$cast['name']}}</a>
+                <div class="flex items-center text-gray-400 text-sm mt-1">
+                    <span class="">{{$cast['character']}}</span>
+                </div>
             </div>
+          </div>
         @endforeach
       </div>
     </div>

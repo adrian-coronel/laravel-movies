@@ -10,7 +10,7 @@ class SearchDropdown extends Component
 {
     # En este atributo se recibirá el objeto de busqueda
     public $search = '';
-
+    
     
     public function render()
     {

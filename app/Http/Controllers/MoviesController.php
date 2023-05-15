@@ -28,7 +28,7 @@ class MoviesController extends Controller
 
         # La responsabilidad de MoviesViewModel es formatear los datos y prepararlos para la vista
         $viewModel = new MoviesViewModel($popularMovies,$nowPlayingMovies,$genreArray);
-        return view('index',$viewModel);
+        return view('movies.index',$viewModel);
     }
 
     /**
@@ -59,7 +59,7 @@ class MoviesController extends Controller
 
         $viewModel = new MovieViewModel($movie);
 
-        return view('show',$viewModel);
+        return view('movies.show',$viewModel);
     }
 
     /**
